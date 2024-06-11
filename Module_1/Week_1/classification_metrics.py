@@ -1,3 +1,6 @@
+import math
+
+
 def is_integer(value):
     """
     Check if the value is an integer.
@@ -60,7 +63,7 @@ def calculate_f1_score(tp, fp, fn):
 
 if __name__ == "__main__":
     # Testing the function using assertions
-    assert calculate_f1_score(2, 3, 4) == 0.3636363636363636
+    assert math.isclose(calculate_f1_score(2, 3, 4), 0.3636363636363636)
     assert calculate_f1_score('a', 3, 4) is None
     assert calculate_f1_score(2, 'a', 4) is None
     assert calculate_f1_score(2, 3, 'a') is None

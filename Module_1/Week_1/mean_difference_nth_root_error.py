@@ -1,3 +1,6 @@
+import math
+
+
 def md_nre_single_sample(y, y_hat, n, p):
     """
     Calculate the Mean Difference of nth Root Error for a single sample.
@@ -20,9 +23,10 @@ def md_nre_single_sample(y, y_hat, n, p):
 
 if __name__ == "__main__":
     # Testing the function using assertions
-    assert round(md_nre_single_sample(100, 99.5, 2, 1), 4) == 0.0250
-    assert round(md_nre_single_sample(50, 49.5, 2, 1), 4) == 0.0354
-    assert round(md_nre_single_sample(20, 19.5, 2, 1), 4) == 0.0563
-    assert round(md_nre_single_sample(0.6, 0.1, 2, 1), 4) == 0.4584
+    assert math.isclose(
+        round(md_nre_single_sample(100, 99.5, 2, 1), 4),  0.0250)
+    assert math.isclose(round(md_nre_single_sample(50, 49.5, 2, 1), 4), 0.0354)
+    assert math.isclose(round(md_nre_single_sample(20, 19.5, 2, 1), 4), 0.0563)
+    assert math.isclose(round(md_nre_single_sample(0.6, 0.1, 2, 1), 4), 0.4584)
 
     print("All tests passed.")

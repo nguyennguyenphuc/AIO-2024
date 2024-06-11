@@ -91,9 +91,9 @@ def approx_cosh(x, n):
 
 if __name__ == "__main__":
     # Testing the functions using assertions
-    assert round(approx_sin(3.14, 10), 4) == 0.0016
-    assert round(approx_cos(3.14, 10), 4) == -0.9999
-    assert round(approx_sinh(3.14, 10), 4) == 11.5487
-    assert round(approx_cosh(3.14, 10), 4) == 11.5919
+    assert math.isclose(round(approx_sin(3.14, 10), 4), 0.0016)
+    assert math.isclose(round(approx_cos(3.14, 10), 4), -0.9999)
+    assert math.isclose(round(approx_sinh(3.14, 10), 4), 11.5487)
+    assert math.isclose(round(approx_cosh(3.14, 10), 4), 11.5919)
 
     print("All tests passed.")
