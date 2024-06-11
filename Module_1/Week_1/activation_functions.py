@@ -87,12 +87,14 @@ def calculate_activation_function(x, activation_function):
 # Example usage
 if __name__ == "__main__":
     # Testing the function using assertions
-    assert calculate_activation_function(1.5, 'sigmoid') == 0.8175744761936437
+    assert math.isclose(calculate_activation_function(
+        1.5, 'sigmoid'), 0.8175744761936437)
     assert calculate_activation_function('abc', 'sigmoid') is None
     assert calculate_activation_function(1.5, 'belu') is None
     assert calculate_activation_function(3, 'relu') == 3
     assert calculate_activation_function(-1, 'relu') == 0
     assert calculate_activation_function(1, 'elu') == 1
-    assert calculate_activation_function(-1, 'elu') == -0.009516258196404042
+    assert math.isclose(calculate_activation_function(-1,
+                        'elu'), -0.009516258196404042)
 
     print("All tests passed.")
